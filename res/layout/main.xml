@@ -1,37 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:stretchColumns="1">
+    android:layout_height="fill_parent">
 
-	<TableRow>
-		<TextView
-            android:layout_column="1"
-            android:text="Lender ID"
-            android:padding="3dip" />
-		<TextView 
-			android:id="@+id/Text_lender_id" 
-			android:gravity="right" />
-	</TableRow>
-	
-	<TableRow>
-		<TextView
-            android:layout_column="1"
-            android:text="Name"
-            android:padding="3dip" />
-		<TextView 
-			android:id="@+id/Text_name" 
-			android:gravity="right" />
-	</TableRow>
-	
-	<TableRow>
-		<TextView
-            android:layout_column="1"
-            android:text="Whereabouts"
-            android:padding="3dip" />
-		<TextView 
-			android:id="@+id/Text_whereabouts" 
-			android:gravity="right" />
-	</TableRow>
-	
-</TableLayout>
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Username:"/>
+
+    <EditText
+        android:id="@+id/EditText_username"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/editbox_background"
+        android:layout_below="@id/label"/>
+
+    <Button
+        android:id="@+id/Button_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/EditText_username"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="10dip"
+        android:text="OK" />
+
+</RelativeLayout>
