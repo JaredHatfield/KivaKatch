@@ -12,6 +12,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.TextView;
@@ -25,6 +26,11 @@ public class DownloadLender extends AsyncTask<Object, Object, Lenders> {
 	private Activity activity;
 	
 	/**
+	 * The progress dialog that is displayed on the screen.
+	 */
+	private ProgressDialog dialog;
+	
+	/**
 	 * A flag to indicate the success or failure of the web request and parsing.
 	 */
 	private Boolean success;
@@ -36,6 +42,7 @@ public class DownloadLender extends AsyncTask<Object, Object, Lenders> {
 		// Process the parameters
 		String url = (String)params[0];
 		this.activity = (Activity)params[1];
+		this.dialog = (ProgressDialog)params[2];
 		
 		// We assume this operation fails until we reach the end.
 		this.success = false;
@@ -67,10 +74,19 @@ public class DownloadLender extends AsyncTask<Object, Object, Lenders> {
 	        for(int s=0; s<listOfLenders.getLength() ; s++){
 	        	Node firstPersonNode = listOfLenders.item(s);
 	        	if(firstPersonNode.getNodeType() == Node.ELEMENT_NODE){
-	        		// Mark down the information retreived from the XML document.
+	        		// Mark down the information retrieved from the XML document.
 	        		kiva.setLenderId(getXMLDataFrom(firstPersonNode, "lender_id"));
 	        		kiva.setName(getXMLDataFrom(firstPersonNode, "name"));
 	                kiva.setWhereabouts(getXMLDataFrom(firstPersonNode, "whereabouts"));
+	                kiva.setCountryCode(getXMLDataFrom(firstPersonNode, "country_code"));
+	                kiva.setUid(getXMLDataFrom(firstPersonNode, "uid"));
+	                kiva.setMemberSince(getXMLDataFrom(firstPersonNode, "member_since"));
+	                kiva.setPersonalUrl(getXMLDataFrom(firstPersonNode, "personal_url"));
+	                kiva.setOccupation(getXMLDataFrom(firstPersonNode, "occupation"));
+	                kiva.setLoanBecause(getXMLDataFrom(firstPersonNode, "loan_because"));
+	                kiva.setOccupationalInfo(getXMLDataFrom(firstPersonNode, "occupational_info"));
+	                kiva.setLoanCount(getXMLDataFrom(firstPersonNode, "loan_count"));
+	                kiva.setInviteeCount(getXMLDataFrom(firstPersonNode, "invitee_count"));
 	                break;
 	        	}
 	        }
@@ -106,10 +122,40 @@ public class DownloadLender extends AsyncTask<Object, Object, Lenders> {
 		    
 		    TextView whereabouts = (TextView)this.activity.findViewById(R.id.Text_whereabouts);
 		    whereabouts.setText(result.getWhereabouts());
+		    
+		    TextView country_code = (TextView)this.activity.findViewById(R.id.Text_country_code);
+		    country_code.setText(result.getCountryCode());
+		    
+		    TextView uid = (TextView)this.activity.findViewById(R.id.Text_uid);
+		    uid.setText(result.getUid());
+		    
+		    TextView member_since = (TextView)this.activity.findViewById(R.id.Text_member_since);
+		    member_since.setText(result.getMemberSince());
+		    
+		    TextView personal_url = (TextView)this.activity.findViewById(R.id.Text_personal_url);
+		    personal_url.setText(result.getPersonalUrl());
+		    
+		    TextView occupation = (TextView)this.activity.findViewById(R.id.Text_occupation);
+		    occupation.setText(result.getOccupation());
+		    
+		    TextView loan_because = (TextView)this.activity.findViewById(R.id.Text_loan_because);
+		    loan_because.setText(result.getLoanBecause());
+		    
+		    TextView occupational_info = (TextView)this.activity.findViewById(R.id.Text_occupational_info);
+		    occupational_info.setText(result.getOccupationalInfo());
+		    
+		    TextView loan_count = (TextView)this.activity.findViewById(R.id.Text_loan_count);
+		    loan_count.setText(result.getLoanCount());
+		    
+		    TextView invitee_count = (TextView)this.activity.findViewById(R.id.Text_invitee_count);
+		    invitee_count.setText(result.getInviteeCount());
     	}
     	else{
     		Log.i("KivaKatch", "No Data Loaded opnPostExecute");
     	}
+    	
+    	// Since we are done loading remove the progress dialog.
+    	this.dialog.cancel();
 	    
 	    Log.i("KivaKatch", "Exited onPostExecute");
     }
@@ -121,11 +167,17 @@ public class DownloadLender extends AsyncTask<Object, Object, Lenders> {
      * @return The string representing the value.
      */
     private String getXMLDataFrom(Node node, String name){
-		Element element = (Element)node;
-		NodeList nodeList = element.getElementsByTagName(name);
-        Element valueElement = (Element)nodeList.item(0);
-        NodeList valueNodeList = valueElement.getChildNodes();
-        String result = ((Node)valueNodeList.item(0)).getNodeValue().trim();
-        return result;
+    	String result = "";
+    	try{
+			Element element = (Element)node;
+			NodeList nodeList = element.getElementsByTagName(name);
+	        Element valueElement = (Element)nodeList.item(0);
+	        NodeList valueNodeList = valueElement.getChildNodes();
+	        result = ((Node)valueNodeList.item(0)).getNodeValue().trim();
+    	}
+    	catch(Exception e){
+    	}
+    	
+    	return result;
 	}
 }
