@@ -1,12 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    >
-<TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/hello"
-    />
-</LinearLayout>
+    android:stretchColumns="1">
+
+	<TableRow>
+		<TextView
+            android:layout_column="1"
+            android:text="Lender ID"
+            android:padding="3dip" />
+		<TextView 
+			android:id="@+id/Text_lender_id" 
+			android:gravity="right" />
+	</TableRow>
+	
+	<TableRow>
+		<TextView
+            android:layout_column="1"
+            android:text="Name"
+            android:padding="3dip" />
+		<TextView 
+			android:id="@+id/Text_name" 
+			android:gravity="right" />
+	</TableRow>
+	
+	<TableRow>
+		<TextView
+            android:layout_column="1"
+            android:text="Whereabouts"
+            android:padding="3dip" />
+		<TextView 
+			android:id="@+id/Text_whereabouts" 
+			android:gravity="right" />
+	</TableRow>
+	
+</TableLayout>
