@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.apache.http.HttpResponse;
@@ -24,8 +23,12 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.kiva.KivaKatch.Information.Lenders;
 
+/**
+ * The asynchronous task for downloading lender information
+ * @author Jared Hatfield
+ *
+ */
 public class DownloadLender extends AsyncTask<Object, Object, Lenders> {
 	
 	/**
@@ -43,6 +46,9 @@ public class DownloadLender extends AsyncTask<Object, Object, Lenders> {
 	 */
 	private Boolean success;
 	
+	/**
+	 * The profile picture that was loaded from the server.
+	 */
 	private Bitmap profile;
 	
 	/**

@@ -5,6 +5,11 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
 
+/**
+ * The activity for displaying a lender's information
+ * @author Jared Hatfield
+ *
+ */
 public class DisplayLender extends Activity {
 	/** 
      * Called when the activity is first created. 

@@ -1,5 +1,10 @@
-package com.kiva.KivaKatch.Information;
+package com.kiva.KivaKatch;
 
+/**
+ * Represents the lender information.
+ * @author Jared Hatfield
+ *
+ */
 public class Lenders {
 	
 	/**

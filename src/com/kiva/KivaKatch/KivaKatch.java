@@ -8,6 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+/**
+ * The main activity that is displayed when the application launches
+ * @author Jared Hatfield
+ *
+ */
 public class KivaKatch extends Activity {
     /** 
      * Called when the activity is first created. 
