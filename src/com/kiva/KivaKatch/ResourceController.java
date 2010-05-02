@@ -29,7 +29,7 @@ public class ResourceController
      * The list of Lenders that have been retrieved. This is a soft reference
      * map so this buffer can be cleared at any time.
      */
-    private Map<String, SoftReference<Lenders>> lenders;
+    private Map<String, SoftReference<Lender>> lenders;
 
     /**
      * The list of profile pictures that have been retreived. This is a soft
@@ -42,7 +42,7 @@ public class ResourceController
      */
     private ResourceController()
     {
-        this.lenders = new HashMap<String, SoftReference<Lenders>>();
+        this.lenders = new HashMap<String, SoftReference<Lender>>();
         this.profilePicture = new HashMap<String, SoftReference<Bitmap>>();
     }
 
@@ -69,14 +69,14 @@ public class ResourceController
      * @return The lender.
      * @throws LenderCreationException
      */
-    public Lenders getLender(String name) throws LenderCreationException
+    public Lender getLender(String name) throws LenderCreationException
     {
-        SoftReference<Lenders> soft = this.lenders.get(name);
+        SoftReference<Lender> soft = this.lenders.get(name);
 
         // Check to see if the item was in the dictionary
         if (soft != null)
         {
-            Lenders lender = soft.get();
+            Lender lender = soft.get();
 
             // Check to see if the object was not garbage collected
             if (lender != null)
@@ -95,8 +95,8 @@ public class ResourceController
 
         // Since we don't have the data in our cache, we must fetch it
         Log.i("KivaKatch", "Lender NOT located in the cache");
-        Lenders l = new Lenders(name);
-        this.lenders.put(name, new SoftReference<Lenders>(l));
+        Lender l = new Lender(name);
+        this.lenders.put(name, new SoftReference<Lender>(l));
         return l;
     }
 

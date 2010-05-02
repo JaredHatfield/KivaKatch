@@ -16,7 +16,7 @@ import com.kiva.KivaKatch.Exceptions.ProfilePictureCreationException;
  * @author Jared Hatfield
  * 
  */
-public class DownloadLender extends AsyncTask<Object, Object, Lenders>
+public class DownloadLender extends AsyncTask<Object, Object, Lender>
 {
 
     /**
@@ -38,7 +38,7 @@ public class DownloadLender extends AsyncTask<Object, Object, Lenders>
      * The request for remote resource and parsing of the result.
      */
     @Override
-    protected Lenders doInBackground(Object... params)
+    protected Lender doInBackground(Object... params)
     {
         // The name of the person being requested
         String name = (String) params[0];
@@ -53,7 +53,7 @@ public class DownloadLender extends AsyncTask<Object, Object, Lenders>
         ResourceController c = ResourceController.Instance();
 
         // The instance of the lender
-        Lenders lender = null;
+        Lender lender = null;
 
         // Retrieve the lender
         try
@@ -88,7 +88,7 @@ public class DownloadLender extends AsyncTask<Object, Object, Lenders>
      *            The Lender information.
      */
     @Override
-    protected void onPostExecute(Lenders result)
+    protected void onPostExecute(Lender result)
     {
         Log.i("KivaKatch", "Entered onPostExecute");
 
