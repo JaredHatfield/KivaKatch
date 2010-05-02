@@ -13,6 +13,11 @@ public class Lenders {
 	private String name;
 	
 	/**
+	 * The image id.
+	 */
+	private String image_id;
+	
+	/**
 	 * The whereabouts.
 	 */
 	private String whereabouts;
@@ -68,6 +73,7 @@ public class Lenders {
 	public Lenders(){
 		this.lender_id = "";
 		this.name = "";
+		this.image_id = "";
 		this.whereabouts = "";
 		this.country_code = "";
 		this.uid = "";
@@ -94,6 +100,14 @@ public class Lenders {
 	 */
 	public void setName(String name){
 		this.name = name;
+	}
+	
+	/**
+	 * Sets the value of image_id.
+	 * @param image_id The new image_id.
+	 */
+	public void setImageId(String image_id){
+		this.image_id = image_id;
 	}
 	
 	/**
@@ -190,6 +204,14 @@ public class Lenders {
 	 */
 	public String getName(){
 		return this.name;
+	}
+	
+	/**
+	 * Gets the value of image_id.
+	 * @return The image_id.
+	 */
+	public String getImageId(){
+		return this.image_id;
 	}
 	
 	/**

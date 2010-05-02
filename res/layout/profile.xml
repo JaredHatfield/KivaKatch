@@ -1,126 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="fill_parent"
-    android:shrinkColumns="2" android:layout_width="wrap_content">
+<ScrollView 
+	xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:id="@+id/ScrollView01" 
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content">
 	
-	<TableRow>
-		<TextView
-            android:layout_column="1"
-            android:text="Lender ID"
-            android:padding="3dip" />
-		<TextView 
-			android:id="@+id/Text_lender_id" 
-			android:gravity="right" />
-	</TableRow>
+	<TableLayout 
+	    android:layout_height="fill_parent"
+	    android:shrinkColumns="2" android:layout_width="wrap_content"
+	    android:paddingLeft="5px"
+	    android:paddingRight="15px">
+		
+		<TableRow>
+			<TextView
+	            android:layout_column="1"
+	            android:text="Profile Picture"
+	            android:padding="3dip" />
+			<ImageView 
+				android:id="@+id/ImageView_profile" 
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:minHeight="80px"
+				android:minWidth="80px"
+				android:layout_gravity="right" />
+		</TableRow>
+		
+		<TableRow>
+			<TextView
+	            android:layout_column="1"
+	            android:text="Lender ID"
+	            android:padding="3dip" />
+			<TextView 
+				android:id="@+id/Text_lender_id" 
+				android:gravity="right" />
+		</TableRow>
+	
+		<TableRow>
+			<TextView
+	            android:layout_column="1"
+	            android:text="Name"
+	            android:padding="3dip" />
+			<TextView 
+				android:id="@+id/Text_name" 
+				android:gravity="right" />
+		</TableRow>
+		
+		<TableRow>
+			<TextView
+	            android:layout_column="1"
+	            android:text="Whereabouts"
+	            android:padding="3dip" />
+			<TextView 
+				android:id="@+id/Text_whereabouts" 
+				android:gravity="right" />
+		</TableRow>
+		
+		<TableRow>
+			<TextView
+	            android:layout_column="1"
+	            android:text="Country Code"
+	            android:padding="3dip" />
+			<TextView 
+				android:id="@+id/Text_country_code" 
+				android:gravity="right" />
+		</TableRow>
+		
+		<TableRow>
+			<TextView
+	            android:layout_column="1"
+	            android:text="Uid"
+	            android:padding="3dip" />
+			<TextView 
+				android:id="@+id/Text_uid" 
+				android:gravity="right" />
+		</TableRow>
+		
+		<TableRow>
+			<TextView
+	            android:layout_column="1"
+	            android:text="Member Since"
+	            android:padding="3dip" />
+			<TextView 
+				android:id="@+id/Text_member_since" 
+				android:gravity="right" />
+		</TableRow>
+		
+		<TableRow>
+			<TextView
+	            android:layout_column="1"
+	            android:text="Personal Url"
+	            android:padding="3dip" />
+			<TextView 
+				android:id="@+id/Text_personal_url" 
+				android:gravity="right" />
+		</TableRow>
+		
+		<TableRow>
+			<TextView
+	            android:layout_column="1"
+	            android:text="Occupation"
+	            android:padding="3dip" />
+			<TextView 
+				android:id="@+id/Text_occupation" 
+				android:gravity="right" />
+		</TableRow>
+		
+		<TableRow>
+			<TextView
+	            android:layout_column="1"
+	            android:text="Loan Because"
+	            android:padding="3dip" />
+			<TextView 
+				android:gravity="right" 
+				android:id="@+id/Text_loan_because" 
+				android:layout_width="wrap_content" />
+		</TableRow>
+		
+		<TableRow>
+			<TextView
+	            android:layout_column="1"
+	            android:text="Occupational Info"
+	            android:padding="3dip" />
+			<TextView 
+				android:gravity="right"
+				android:id="@+id/Text_occupational_info" />
+		</TableRow>
+		
+		<TableRow>
+			<TextView
+	            android:layout_column="1"
+	            android:text="Loan Count"
+	            android:padding="3dip" />
+			<TextView 
+				android:id="@+id/Text_loan_count" 
+				android:gravity="right" />
+		</TableRow>
+		
+		<TableRow>
+			<TextView
+	            android:layout_column="1"
+	            android:text="Invitee Count"
+	            android:padding="3dip" />
+			<TextView 
+				android:id="@+id/Text_invitee_count" 
+				android:gravity="right" />
+		</TableRow>
+	
+	</TableLayout>
+	
+</ScrollView>
 
-	<TableRow>
-		<TextView
-            android:layout_column="1"
-            android:text="Name"
-            android:padding="3dip" />
-		<TextView 
-			android:id="@+id/Text_name" 
-			android:gravity="right" />
-	</TableRow>
-	
-	<TableRow>
-		<TextView
-            android:layout_column="1"
-            android:text="Whereabouts"
-            android:padding="3dip" />
-		<TextView 
-			android:id="@+id/Text_whereabouts" 
-			android:gravity="right" />
-	</TableRow>
-	
-	<TableRow>
-		<TextView
-            android:layout_column="1"
-            android:text="Country Code"
-            android:padding="3dip" />
-		<TextView 
-			android:id="@+id/Text_country_code" 
-			android:gravity="right" />
-	</TableRow>
-	
-	<TableRow>
-		<TextView
-            android:layout_column="1"
-            android:text="Uid"
-            android:padding="3dip" />
-		<TextView 
-			android:id="@+id/Text_uid" 
-			android:gravity="right" />
-	</TableRow>
-	
-	<TableRow>
-		<TextView
-            android:layout_column="1"
-            android:text="Member Since"
-            android:padding="3dip" />
-		<TextView 
-			android:id="@+id/Text_member_since" 
-			android:gravity="right" />
-	</TableRow>
-	
-	<TableRow>
-		<TextView
-            android:layout_column="1"
-            android:text="Personal Url"
-            android:padding="3dip" />
-		<TextView 
-			android:id="@+id/Text_personal_url" 
-			android:gravity="right" />
-	</TableRow>
-	
-	<TableRow>
-		<TextView
-            android:layout_column="1"
-            android:text="Occupation"
-            android:padding="3dip" />
-		<TextView 
-			android:id="@+id/Text_occupation" 
-			android:gravity="right" />
-	</TableRow>
-	
-	<TableRow>
-		<TextView
-            android:layout_column="1"
-            android:text="Loan Because"
-            android:padding="3dip" />
-		<TextView 
-			android:gravity="right" 
-			android:id="@+id/Text_loan_because" 
-			android:layout_width="wrap_content" />
-	</TableRow>
-	
-	<TableRow>
-		<TextView
-            android:layout_column="1"
-            android:text="Occupational Info"
-            android:padding="3dip" />
-		<TextView 
-			android:gravity="right"
-			android:id="@+id/Text_occupational_info" />
-	</TableRow>
-	
-	<TableRow>
-		<TextView
-            android:layout_column="1"
-            android:text="Loan Count"
-            android:padding="3dip" />
-		<TextView 
-			android:id="@+id/Text_loan_count" 
-			android:gravity="right" />
-	</TableRow>
-	
-	<TableRow>
-		<TextView
-            android:layout_column="1"
-            android:text="Invitee Count"
-            android:padding="3dip" />
-		<TextView 
-			android:id="@+id/Text_invitee_count" 
-			android:gravity="right" />
-	</TableRow>
-</TableLayout>
