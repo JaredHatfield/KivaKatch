@@ -9,7 +9,8 @@
 	    android:layout_height="fill_parent"
 	    android:shrinkColumns="2" android:layout_width="wrap_content"
 	    android:paddingLeft="5px"
-	    android:paddingRight="15px">
+	    android:paddingRight="15px"
+	    android:paddingBottom="20px">
 		
 		<TableRow>
 			<TextView

@@ -29,11 +29,8 @@ public class DisplayLender extends Activity {
         Bundle extras = getIntent().getExtras();
         String name = extras.getString("name");
         
-        // Make the URL
-        String url = "http://api.kivaws.org/v1/lenders/" + name + ".xml";
-        
         // Load the remote asynchronously
-        new DownloadLender().execute(url, this, dialog);
+        new DownloadLender().execute(name, this, dialog);
         
     	Log.i("KivaKatch", "Exited onCreate");
     }
