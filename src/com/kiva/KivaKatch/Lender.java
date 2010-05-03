@@ -23,11 +23,6 @@ import com.kiva.KivaKatch.Exceptions.LenderCreationException;
 public class Lender
 {
     /**
-     * The base url used to access the Kiva API.
-     */
-    private static String baseUrl = "http://api.kivaws.org/v1/lenders/<NAME>.xml";
-
-    /**
      * The lender_id.
      */
     private String lender_id;
@@ -102,7 +97,7 @@ public class Lender
         Log.i("KivaKatch", "Construting a new Lender");
 
         // Process the parameters
-        String url = Lender.baseUrl.replaceFirst("<NAME>", name);
+        String url = KivaAPI.getLenderURL(name);
 
         // Create an instance of HttpClient
         HttpClient client = new DefaultHttpClient();

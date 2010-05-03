@@ -26,11 +26,6 @@ public class KivaKatch extends Activity
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.main);
 
-        // Load the remote asynchronously
-        // new
-        // DownloadLender().execute("http://api.kivaws.org/v1/lenders/matt.xml",
-        // this);
-
         Button b = (Button) this.findViewById(R.id.Button_ok);
         b.setOnClickListener(new View.OnClickListener()
         {

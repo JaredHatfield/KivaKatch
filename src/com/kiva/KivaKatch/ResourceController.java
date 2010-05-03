@@ -138,7 +138,7 @@ public class ResourceController
         try
         {
             // Retrieve the bitmap image
-            URL aURL = new URL("http://www.kiva.org/img/w80h80/" + imageId + ".jpg");
+            URL aURL = new URL(KivaAPI.getSmallProfileImageURL(imageId));
             final URLConnection connection = aURL.openConnection();
             connection.connect();
             final BufferedInputStream input = new BufferedInputStream(connection.getInputStream());
